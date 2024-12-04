@@ -21,5 +21,6 @@ const OrderSchema = new mongoose.Schema({
   }
 });
 
+OrderSchema.index({orderDate: -1});  // sorting by order date for last 7 days orders
 const Order= mongoose.model("Order", OrderSchema);
 export default Order;

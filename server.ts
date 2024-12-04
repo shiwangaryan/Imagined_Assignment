@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import express from "express";
 import dotenv from "dotenv";
 import userRouter from "./routes/user.routes";
+import productRouter from "./routes/product.routes";
 
 // -- BASIC CONFIG
 dotenv.config();
@@ -12,7 +13,7 @@ app.use(express.json());
 
 // -- ROUTES
 app.use("/user", userRouter);
-// app.use("/product");
+app.use("/product", productRouter);
 // app.use("/orders");
 
 // -- MONGOOSE CONNECT
