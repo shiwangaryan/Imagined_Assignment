@@ -1,14 +1,12 @@
 import mongoose, { Schema } from "mongoose";
 
 const OrderSchema = new mongoose.Schema({
-  userId: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
+  userEmail: {
+    type: "String",
     required: true,
   },
   product: {
-    type: Schema.Types.ObjectId,
-    ref: "Product",
+    type: "String",
     required: true,
   },
   orderDate: {
@@ -18,7 +16,7 @@ const OrderSchema = new mongoose.Schema({
   quantity: {
     type: Number,
     required: true,
-  }
+  },
 });
 
 OrderSchema.index({orderDate: -1});  // sorting by order date for last 7 days orders
