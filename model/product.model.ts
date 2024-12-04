@@ -4,6 +4,7 @@ const ProductSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
+    unique: true,  // setting this as unique because of future fetch functions
   },
   category: {
     type: String,

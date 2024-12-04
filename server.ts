@@ -1,17 +1,19 @@
 import mongoose from "mongoose";
 import express from "express";
-import bodyParser from "body-parser";
 import dotenv from "dotenv";
-import { version } from "os";
+import userRouter from "./routes/user.routes";
 
 // -- BASIC CONFIG
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 5000;
 const mongouri = process.env.MONGOURI!;
-app.use(bodyParser.json());
+app.use(express.json());
 
 // -- ROUTES
+app.use("/user", userRouter);
+// app.use("/product");
+// app.use("/orders");
 
 // -- MONGOOSE CONNECT
 const clientOptions = {
