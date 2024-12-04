@@ -20,5 +20,7 @@ const ProductSchema = new mongoose.Schema({
   },
 });
 
+ProductSchema.index({ name: 1 }); // sorting by name for fetching products
+
 const Product = mongoose.model("Product", ProductSchema);
 export default Product;

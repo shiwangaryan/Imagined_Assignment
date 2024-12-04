@@ -17,5 +17,7 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
+UserSchema.index({ email: 1 }); // sorting by email for fetching user
+
 const User = mongoose.model("User", UserSchema);
 export default User;
