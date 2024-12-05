@@ -20,7 +20,7 @@ const updateOrderController = async (req: Request, res: Response) => {
       res.status(400).json({ message: "Quantity cannot be negative or zero" });
       return;
     }
-    if (quantity > productExist!.stockQuantity) {
+    if (quantity > productExist!.stockQuantity+ order.quantity) {
       // order only exists if the product exists as the check is added in create order controller
       res.status(400).json({ message: "Quantity exceeds stock quantity" });
       return;

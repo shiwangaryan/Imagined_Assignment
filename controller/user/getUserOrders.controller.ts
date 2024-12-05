@@ -17,7 +17,7 @@ const getUserOrdersController = async (req: Request, res: Response) => {
     }
 
     // fetch all the orders
-    const orders = await Order.find({ userId: user.id });
+    const orders = await Order.find({ userEmail: email });
     if (orders.length == 0) {
       res.status(404).json({ message: "No orders for this user yet." });
     }
