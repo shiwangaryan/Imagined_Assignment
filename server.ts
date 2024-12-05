@@ -13,6 +13,9 @@ const mongouri = process.env.MONGOURI!;
 app.use(express.json());
 
 // -- ROUTES
+app.use("/", (req, res) => {
+  res.send("Welcome to E-Commerce API");
+});
 app.use("/user", userRouter);
 app.use("/product", productRouter);
 app.use("/order", orderRouter);
